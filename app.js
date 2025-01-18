@@ -7,7 +7,7 @@ function opentab(tabname) {
     }
     for (tabcontent of tabcontents) {
         tabcontent.classList.remove("active-tab")
-    }
+    }s
     event.currentTarget.classList.add("active-link");
     document.getElementById(tabname).classList.add("active-tab");
 }
@@ -52,8 +52,6 @@ function sendEmail(event) {
             from_email: email,
             message: message
         };
-
-        // Use your Service ID, Template ID, and the provided template parameters
         emailjs.send('service_1w4yxvm', 'template_uj3d6fu', templateParams)
             .then(response => {
                 console.log('SUCCESS!', response.status, response.text);
@@ -71,6 +69,54 @@ function sendEmail(event) {
         statusMessage.style.color = "red";
     }
 }
-
-// Attach the sendEmail function to form submission
 document.getElementById("contactForm").addEventListener("submit", sendEmail);
+
+// New Modification.
+function opentab(tabName) {
+    let tabContents = document.querySelectorAll('.tab-contents');
+    tabContents.forEach((tabContent) => tabContent.classList.remove('active-tab'));
+
+    let tabLinks = document.querySelectorAll('.tab-links');
+    tabLinks.forEach((tabLink) => tabLink.classList.remove('active-link'));
+
+    document.getElementById(tabName).classList.add('active-tab');
+
+    document.querySelector(`[onclick="opentab('${tabName}')"]`).classList.add('active-link');
+}
+
+// Feedback form Validation....
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault(); 
+
+    const emailInput = document.getElementById("email");
+    const nameInput = document.getElementById("name");
+    const messageInput = document.getElementById("message");
+    const statusMessage = document.getElementById("statusMessage");
+
+   
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!nameInput.value.trim()) {
+        statusMessage.textContent = "Please enter your name.";
+        statusMessage.style.color = "red";
+        return;
+    }
+
+    if (!emailRegex.test(emailInput.value)) {
+        statusMessage.textContent = "Please enter a valid email address.";
+        statusMessage.style.color = "red";
+        return;
+    }
+
+    if (!messageInput.value.trim()) {
+        statusMessage.textContent = "Please enter your message.";
+        statusMessage.style.color = "red";
+        return;
+    }
+
+    statusMessage.textContent = "Message sent successfully!";
+    statusMessage.style.color = "green";
+    nameInput.value = "";
+    emailInput.value = "";
+    messageInput.value = "";
+
+});
