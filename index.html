@@ -58,22 +58,41 @@
 					<img src="./assets/profile.jpg" alt="profile pic" class="home-img">
 				</div>
 				<div class="about-col-2" id="user-detail-intro">
-					<p> I'm a passionate Java Full Stack Developer with a keen interest in building dynamic and responsive web applications. 
-                        I have a solid foundation in Java, Spring Boot, Hibernate, and experience with front-end technologies like HTML, CSS, JavaScript, and React.js.
-                        I enjoy problem-solving and continuously improving my skills in both back-end and front-end development. I seek a
-						career with an organization where I can grow and utilize my skills.
+					<p> I am a Java Full Stack Developer with expertise in Java, Spring Boot, Hibernate, and front-end
+						technologies like HTML, CSS, JavaScript, and React.js. Currently, I work as a backend developer,
+						designing and developing APIs, integrating third-party services, and implementing secure
+						communication with JWT authentication.
+
+						I focus on building efficient solutions, optimizing performance, and ensuring scalability. As a
+						self-motivated problem-solver, I am always looking to grow and contribute to innovative
+						projects.
 					</p>
-					
 					<div class="tab-titles">
 						<p class="tab-links active-link" onclick="opentab('education')">Education</p>
 						<p class="tab-links" onclick="opentab('experience')">Experience</p>
 					</div>
 					<div class="tab-contents active-tab" id="education">
 						<ul>
-							<li><span>Java Full Stack Development 🎓</span><br>Jspiders, Bengaluru<br>
-                                June 2024 - Dec 2024
+							<li><span>Java Full Stack Development 🎓</span><br>Jspiders, Bengaluru<br />[June 2024 - Dec
+							2024]</li>
+							<li><span>Bachelor of Computer Applications 🎓</span><br> DR. BRABU Muzaffarpur,
+							Bihar<br />[Oct 2020 - Dec 2023]</li>
+						</ul>
+					</div>
+					<div class="tab-contents" id="experience">
+						<ul>
+							<li><span>Software Developer 👨‍💻</span><br>InfomazeElite Pvt.
+								Ltd.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Jan 2025 - Present]
+								<br>* As a backend developer,
+								I specialize in designing and developing robust APIs while seamlessly integrating
+								third-party APIs.
+								I ensure secure communication by implementing JWT authentication and authorization
+								mechanisms.
+								My responsibilities include building efficient backend solutions, optimizing API
+								performance,
+								and adhering to best practices in security and scalability to deliver high-quality
+								software.
 							</li>
-							<li><span>Bachelor of Computer Applications 🎓</span><br> DR. BRABU Muzaffarpur, Bihar<br>Oct 2020 - Dec 2023</li>
 						</ul>
 					</div>
 				</div>
@@ -222,36 +241,36 @@
 					<div id="contact-email">
 						<div class="info-head">
 							<i class="fa-regular fa-envelope"></i>
-                            <p>Email</p>
-                            <a class="l" href="mailto:shashankjsdev@gmail.com">shashankjsdev@gmail.com</a>
+							<p>Email</p>
+							<a class="l" href="mailto:shashankjsdev@gmail.com">shashankjsdev@gmail.com</a>
 						</div>
 					</div>
 					<div>
 						<div class="info-head">
 							<i class="fa-solid fa-phone"></i>
-                            <p>Phone</p>
-                            <a class="l"  href="tel:+91 9471494260">+91 9471494260</a>
+							<p>Phone</p>
+							<a class="l" href="tel:+91 9471494260">+91 9471494260</a>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="send-info">
-				<form id="contactForm">
-                    <div>
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div>
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div>
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit">Send Message</button>
-                    <p id="statusMessage"></p>
-                </form>
+				<form id="contactForm" method="post">
+					<div>
+						<label for="name">Your Name</label>
+						<input type="text" id="name" name="name">
+					</div>
+					<div>
+						<label for="email">Your Email</label>
+						<input type="email" id="email" name="email">
+					</div>
+					<div>
+						<label for="message">Message</label>
+						<textarea id="message" name="message"></textarea>
+					</div>
+					<button type="submit">Send Message</button>
+					<p id="statusMessage"></p>
+				</form>
 			</div>
 		</div>
 	</section>
